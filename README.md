@@ -1,17 +1,19 @@
-# [Project Name]
+# Voicecloning
 
-> [Brief description of the project - one or two sentences]
+> This repository provides a seamless "all-in-one" solution to clone any voice found on YouTube. By simply providing a URL, the application extracts the audio, uses AI to transcribe the speaker's unique speech patterns, and allows you to generate new dialogue in that exact voice.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![GitHub issues](https://img.shields.io/github/issues/devMuniz02/[repo-name])](https://github.com/devMuniz02/[repo-name]/issues)
-[![GitHub stars](https://img.shields.io/github/stars/devMuniz02/[repo-name])](https://github.com/devMuniz02/[repo-name]/stargazers)
+[![GitHub issues](https://img.shields.io/github/issues/devMuniz02/VoiceCloning)](https://github.com/devMuniz02/VoiceCloning/issues)
+[![GitHub stars](https://img.shields.io/github/stars/devMuniz02/VoiceCloning)](https://github.com/devMuniz02/VoiceCloning/stargazers)
+
+![Voice Cloning App Interface](assets/GRADIO.png)
 
 ## 📋 Table of Contents
 
 - [Features](#features)
 - [Installation](#installation)
-- [Repository Setup](#repository-setup)
 - [Usage](#usage)
+- [Project Structure](#project-structure)
 - [Configuration](#configuration)
 - [Contributing](#contributing)
 - [License](#license)
@@ -19,100 +21,128 @@
 
 ## ✨ Features
 
-- [Feature 1]
-- [Feature 2]
-- [Feature 3]
-- [Add more features as needed]
+- **Voice Cloning from YouTube**: Extract audio from YouTube URLs and clone voices using AI
+- **AI-Powered Transcription**: Automatically transcribe and analyze speech patterns
+- **Character Voice Generation**: Generate new dialogue in cloned voices
+- **SpongeBob Character Support**: Pre-configured for Mr. Krabs, Patrick, Sandy, and SpongeBob voices
+- **Reference Text Management**: Organized reference texts for accurate voice cloning
+- **Generation Output Storage**: Save and organize generated voice samples
 
 ## 🚀 Installation
 
 ### Prerequisites
 
-- [List prerequisites, e.g., Node.js v16+, Python 3.8+, etc.]
+- Python 3.8+
+- Git
+- CUDA-compatible GPU (recommended for faster processing)
 
 ### Installation Steps
 
 ```bash
 # Clone the repository
-git clone https://github.com/devMuniz02/[repo-name].git
+git clone https://github.com/devMuniz02/VoiceCloning.git
 
 # Navigate to the project directory
-cd [repo-name]
+cd VoiceCloning
 
 # Install dependencies
-npm install
-# or
 pip install -r requirements.txt
-# or
-[other installation commands]
 ```
 
-## � Repository Setup
+## 📖 Usage
 
-After cloning this template repository, run the setup script to automatically populate the README with your repository information:
+### Running the Web Interface
 
-### Prerequisites for Setup Script
-- Python 3.6+
-- Git configured with remote origin
-
-### Setup Steps
 ```bash
-# Install Python dependencies
-pip install -r requirements.txt
-
-# Run the setup script
-python update_readme.py
+# Run the Gradio web application
+python app.py
 ```
 
-This script will:
-- Fetch repository information from GitHub API
-- Update the project name and description in README.md
-- Extract the repository name from the git remote URL
+This will start a local web server where you can:
+- Input a YouTube URL to extract voice samples
+- Generate new dialogue in cloned voices
+- Choose from pre-configured SpongeBob characters
 
-**Note:** Make sure your repository has a remote origin set and is pushed to GitHub before running the script.
+### Command-Line Voice Cloning
+
+```bash
+# Run the voice cloning script for a specific character
+python clone.py
+```
+
+Modify `clone.py` to change the `VOICE_NAME` variable for different characters:
+- spongebob
+- mrkrabs
+- sandy
+- patrick
+
+### Advanced Usage
+
+The application uses:
+- **Whisper**: For audio transcription and speech analysis
+- **Qwen TTS**: For voice synthesis and cloning
+- **yt-dlp**: For YouTube audio extraction
+- **Gradio**: For the web interface
 
 ## 📁 Project Structure
 
 ```
-[repo-name]/
+VoiceCloning/
+├── app.py                  # Main application script
+├── clone.py                # Voice cloning functionality
+├── LICENSE                 # License file
+├── README.md               # Project documentation
+├── requirements.txt        # Python dependencies
 ├── assets/                 # Static assets (images, icons, etc.)
 ├── data/                   # Data files and datasets
 ├── docs/                   # Documentation files
+├── generations/            # Generated voice outputs
+│   ├── mrkrabs/
+│   │   ├── 1.txt
+│   │   └── 2.txt
+│   ├── patrick/
+│   │   └── 1.txt
+│   ├── sandy/
+│   │   └── 1.txt
+│   └── spongebob/
+│       └── 1.txt
 ├── notebooks/              # Jupyter notebooks for analysis and prototyping
 ├── scripts/                # Utility scripts and automation tools
 ├── src/                    # Source code
 ├── tests/                  # Unit tests and test files
-├── LICENSE                 # License file
-├── README.md               # Project documentation
-└── requirements.txt        # Python dependencies
+└── voices/                 # Voice reference data
+    ├── mrkrabs/
+    │   └── mrkrabs_reference_text.txt
+    ├── patrick/
+    │   └── patrick_reference_text.txt
+    ├── sandy/
+    │   └── sandy_reference_text.txt
+    └── spongebob/
+        └── spongebob_reference_text.txt
 ```
 
 ### Directory Descriptions
 
-- **`assets/`**: Store static files like images, icons, fonts, and other media assets.
-- **`data/`**: Place datasets, input files, and any data-related resources here.
+- **`app.py`**: Main application entry point for the voice cloning interface.
+- **`clone.py`**: Core voice cloning logic and AI processing.
+- **`assets/`**: Static files like images, icons, fonts, and other media assets.
+- **`data/`**: Datasets, input files, and any data-related resources.
 - **`docs/`**: Additional documentation, guides, and project-related files.
+- **`generations/`**: Output directory containing generated voice samples for different characters.
 - **`notebooks/`**: Jupyter notebooks for data exploration, prototyping, and demonstrations.
 - **`scripts/`**: Utility scripts for automation, setup, deployment, or maintenance tasks.
 - **`src/`**: Main source code for the project.
 - **`tests/`**: Unit tests, integration tests, and test-related files.
-
-## �📖 Usage
-
-### Basic Usage
-
-```bash
-# Example command
-[command example]
-```
-
-### Advanced Usage
-
-[Provide more detailed usage examples, code snippets, or screenshots]
+- **`voices/`**: Reference voice data and text files for different characters.
 
 ## ⚙️ Configuration
 
-[Explain configuration options, environment variables, config files, etc.]
+The application can be configured by modifying the following in `clone.py`:
+- `VOICE_NAME`: Choose from "spongebob", "mrkrabs", "sandy", "patrick"
+- `SOURCES`: Dictionary containing YouTube URLs and time ranges for each character
+- Model size in `app.py`: Choose between "0.6B" and "1.7B" models
+
+Reference text files are stored in `voices/{character}/{character}_reference_text.txt` and can be customized for better voice cloning accuracy.
 
 ## 🤝 Contributing
 
@@ -127,19 +157,14 @@ Contributions are welcome! Please follow these steps:
 ### Development Setup
 
 ```bash
-# Install development dependencies
-npm install --dev
-# or
-pip install -r requirements-dev.txt
+# Install development dependencies (if available)
+pip install -r requirements.txt
 
-# Run tests
-npm test
-# or
-python -m pytest
+# Run tests (if available)
+python -m pytest tests/
 
-# Run linting
-npm run lint
-# or
+# Code formatting
+pip install black
 black .
 ```
 
@@ -153,7 +178,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Hugging Face:** [https://huggingface.co/manu02](https://huggingface.co/manu02)
 - **Portfolio:** [https://devmuniz02.github.io/](https://devmuniz02.github.io/)
 
-Project Link: [https://github.com/devMuniz02/[repo-name]](https://github.com/devMuniz02/[repo-name])
+Project Link: [https://github.com/devMuniz02/VoiceCloning](https://github.com/devMuniz02/VoiceCloning)
 
 ---
 

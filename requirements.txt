@@ -1,8 +1,14 @@
 # For installing the latest pre-release versions of PyTorch with CUDA 13.0 support
-# --pre
-# --extra-index-url https://download.pytorch.org/whl/cu130
+qwen-tts
+yt-dlp
+openai-whisper 
+soundfile 
+gradio
 
-# torch
+--pre
+--extra-index-url https://download.pytorch.org/whl/cu130
+
+torch
 # torchvision
 
 # Data Science & Machine Learning
