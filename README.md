@@ -1,25 +1,55 @@
+[![ArXiv](https://img.shields.io/badge/ArXiv-2512.16841-B31B1B?logo=arxiv&logoColor=white)](https://arxiv.org/abs/2512.16841)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-devmuniz-0A66C2?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/devmuniz)
+[![GitHub Profile](https://img.shields.io/badge/GitHub-devMuniz02-181717?logo=github&logoColor=white)](https://github.com/devMuniz02)
+[![Portfolio](https://img.shields.io/badge/Portfolio-devmuniz02.github.io-0F172A?logo=googlechrome&logoColor=white)](https://devmuniz02.github.io/)
+[![Hugging Face](https://img.shields.io/badge/Hugging%20Face-manu02-FFD21E?logoColor=black)](https://huggingface.co/manu02)
+
 # Voicecloning
 
 > This repository provides a seamless "all-in-one" solution to clone any voice found on YouTube. By simply providing a URL, the application extracts the audio, uses AI to transcribe the speaker's unique speech patterns, and allows you to generate new dialogue in that exact voice.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![GitHub issues](https://img.shields.io/github/issues/devMuniz02/VoiceCloning)](https://github.com/devMuniz02/VoiceCloning/issues)
-[![GitHub stars](https://img.shields.io/github/stars/devMuniz02/VoiceCloning)](https://github.com/devMuniz02/VoiceCloning/stargazers)
+- [Features](#features) - [Installation](#installation) - [Usage](#usage) - [Project Structure](#project-structure) - [Configuration](#configuration) - [Contributing](#contributing) - [License](#license) - [Contact](#contact)
 
-![Voice Cloning App Interface](assets/GRADIO.png)
+## Overview
 
-## 📋 Table of Contents
+This repository provides a seamless "all-in-one" solution to clone any voice found on YouTube. By simply providing a URL, the application extracts the audio, uses AI to transcribe the speaker's unique speech patterns, and allows you to generate new dialogue in that exact voice.
 
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Project Structure](#project-structure)
-- [Configuration](#configuration)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
+## Repository Structure
 
-## ✨ Features
+| Path | Description |
+| --- | --- |
+| `assets/` | Images, figures, or other supporting media used by the project. |
+| `.gitignore` | Top-level file included in the repository. |
+| `app.py` | Top-level file included in the repository. |
+| `clone.py` | Top-level file included in the repository. |
+| `LICENSE` | Repository license information. |
+| `README.md` | Primary project documentation. |
+| `requirements.txt` | Python dependency specification for local setup. |
+
+## Getting Started
+
+1. Clone the repository.
+
+   ```bash
+   git clone https://github.com/devMuniz02/VoiceCloning.git
+   cd VoiceCloning
+   ```
+
+2. Prepare the local environment.
+
+Install Python dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+3. Run or inspect the project entry point.
+
+Run the main application:
+```bash
+python app.py
+```
+
+## Features
 
 - **Voice Cloning from YouTube**: Extract audio from YouTube URLs and clone voices using AI
 - **AI-Powered Transcription**: Automatically transcribe and analyze speech patterns
@@ -28,7 +58,7 @@
 - **Reference Text Management**: Organized reference texts for accurate voice cloning
 - **Generation Output Storage**: Save and organize generated voice samples
 
-## 🚀 Installation
+## Installation
 
 ### Prerequisites
 
@@ -49,7 +79,7 @@ cd VoiceCloning
 pip install -r requirements.txt
 ```
 
-## 📖 Usage
+## Usage
 
 ### Running the Web Interface
 
@@ -84,7 +114,34 @@ The application uses:
 - **yt-dlp**: For YouTube audio extraction
 - **Gradio**: For the web interface
 
-## 📁 Project Structure
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+**Links:**
+- **GitHub:** [https://github.com/devMuniz02/](https://github.com/devMuniz02/)
+- **LinkedIn:** [https://www.linkedin.com/in/devmuniz](https://www.linkedin.com/in/devmuniz)
+- **Hugging Face:** [https://huggingface.co/manu02](https://huggingface.co/manu02)
+- **Portfolio:** [https://devmuniz02.github.io/](https://devmuniz02.github.io/)
+
+Project Link: [https://github.com/devMuniz02/VoiceCloning](https://github.com/devMuniz02/VoiceCloning)
+
+---
+
+⭐ If you find this project helpful, please give it a star!
+
+## Table of Contents
+
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
+- [Configuration](#configuration)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+
+## Project Structure
 
 ```
 VoiceCloning/
@@ -135,7 +192,7 @@ VoiceCloning/
 - **`tests/`**: Unit tests, integration tests, and test-related files.
 - **`voices/`**: Reference voice data and text files for different characters.
 
-## ⚙️ Configuration
+## ️ Configuration
 
 The application can be configured by modifying the following in `clone.py`:
 - `VOICE_NAME`: Choose from "spongebob", "mrkrabs", "sandy", "patrick"
@@ -144,7 +201,7 @@ The application can be configured by modifying the following in `clone.py`:
 
 Reference text files are stored in `voices/{character}/{character}_reference_text.txt` and can be customized for better voice cloning accuracy.
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please follow these steps:
 
@@ -167,19 +224,3 @@ python -m pytest tests/
 pip install black
 black .
 ```
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-**Links:**
-- **GitHub:** [https://github.com/devMuniz02/](https://github.com/devMuniz02/)
-- **LinkedIn:** [https://www.linkedin.com/in/devmuniz](https://www.linkedin.com/in/devmuniz)
-- **Hugging Face:** [https://huggingface.co/manu02](https://huggingface.co/manu02)
-- **Portfolio:** [https://devmuniz02.github.io/](https://devmuniz02.github.io/)
-
-Project Link: [https://github.com/devMuniz02/VoiceCloning](https://github.com/devMuniz02/VoiceCloning)
-
----
-
-⭐ If you find this project helpful, please give it a star!
